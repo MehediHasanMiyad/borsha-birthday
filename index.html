@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Borsha 💗 | Birthday Surprise</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --pink: #ff78ad;
+  --deep: #e94e91;
+  --light: #fff0f6;
+  --purple: #a77bdb;
+  --text: #70445e;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
+  background: #fff4f8;
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 18px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 15%, #ffe0ed 0 3px, transparent 4px),
+    radial-gradient(circle at 90% 75%, #f8d6ff 0 4px, transparent 5px),
+    linear-gradient(145deg, #fff5fa, #ffe7f1 55%, #f8eaff);
+}
+
+.page.active {
+  display: flex;
+  animation: pageIn .65s ease both;
+}
+
+@keyframes pageIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+h1, h2 {
+  color: #d84d91;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: clamp(30px, 7vw, 52px);
+}
+
+h2 {
+  font-size: clamp(25px, 5vw, 36px);
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.subtitle {
+  color: #986b88;
+  margin: 12px auto 24px;
+  max-width: 540px;
+}
+
+.photo {
+  display: block;
+  width: min(75vw, 280px);
+  height: 310px;
+  object-fit: cover;
+  margin: 20px auto;
+  border: 8px solid white;
+  border-radius: 30px;
+  box-shadow: 0 12px 35px #d76e9d38;
+}
+
+.photo.round {
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  border: 8px solid white;
+}
+
+.photo.couple {
+  width: min(88vw, 430px);
+  height: 380px;
+  border-radius: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff75a9, #dc5eac);
+  color: white;
+  padding: 13px 28px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 10px 5px;
+  box-shadow: 0 7px 20px #e45b9c38;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.btn.secondary {
+  background: white;
+  color: #d84d91;
+  border: 2px solid #ffd0e2;
+  box-shadow: none;
+}
+
+.password-box {
+  max-width: 320px;
+  margin: 20px auto;
+}
+
+.password-box input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ffc3dc;
+  background: white;
+  border-radius: 15px;
+  font-size: 20px;
+  text-align: center;
+  outline: none;
+  letter-spacing: 5px;
+}
+
+.password-box input:focus {
+  border-color: #ed71a7;
+}
+
+.error {
+  color: #dc376b;
+  min-height: 27px;
+  margin-top: 8px;
+}
+
+.card {
+  background: #ffffffc9;
+  border: 2px solid #fff;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px #e99bb52c;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.letter {
+  text-align: left;
+  white-space: normal;
+}
+
+.letter p {
+  margin: 12px 0;
+}
+
+.decor {
+  position: absolute;
+  font-size: 27px;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%,100% {transform: translateY(0) rotate(-8deg);}
+  50% {transform: translateY(-17px) rotate(8deg);}
+}
+
+.cat {
+  font-size: 75px;
+  margin: 15px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% {transform: translateY(-10px);}
+}
+
+.wish-list {
+  list-style: none;
+  margin: 20px auto;
+  max-width: 470px;
+  text-align: left;
+}
+
+.wish-list li {
+  background: white;
+  margin: 10px 0;
+  padding: 13px 17px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px #e8a3c22b;
+}
+
+.cake {
+  font-size: 110px;
+  margin: 20px;
+  cursor: pointer;
+  display: inline-block;
+  animation: cake 2s infinite;
+}
+
+@keyframes cake {
+  50% {transform: scale(1.08);}
+}
+
+#gameArea {
+  width: min(100%, 480px);
+  height: 350px;
+  background: #fff;
+  border: 3px dashed #ff9cc5;
+  border-radius: 22px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.heart {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  animation: heartDrop 3.5s linear forwards;
+}
+
+@keyframes heartDrop {
+  from {top: -40px;}
+  to {top: 110%;}
+}
+
+.game-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.final-message {
+  background: white;
+  border-radius: 28px;
+  padding: 25px;
+  box-shadow: 0 12px 35px #d76e9d35;
+}
+
+.footer {
+  color: #bc7d9c;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background: linear-gradient(90deg, #ff73ab, #ad76df);
+  z-index: 20;
+  transition: width .4s;
+}
+
+@media(max-width: 480px) {
+  .page {padding: 25px 15px;}
+  .photo {height: 275px;}
+  .photo.couple {height: 330px;}
+  .card {padding: 20px 16px;}
+  p {font-size: 16px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- PAGE 1: PASSWORD -->
+<section class="page active" id="page1">
+  <div class="decor" style="top:8%;left:8%">🎀</div>
+  <div class="decor" style="top:15%;right:8%">🐱</div>
+  <div class="decor" style="bottom:12%;left:8%">💗</div>
+  <div class="decor" style="bottom:12%;right:8%">✨</div>
+
+  <div class="container">
+    <div style="font-size:40px">🌸 🎀 🌸</div>
+    <img class="photo round" src=".//password.jpeg" alt="বর্ষা"
+         onerror="this.src='https://placehold.co/400x400/ffe0ed/d84d91?text=Borsha'">
+    <h1>একটি ছোট্ট সারপ্রাইজ!</h1>
+    <p class="subtitle">শুধু বর্ষার জন্য তৈরি একটি গোপন ভালোবাসার উপহার। 💗</p>
+
+    <div class="password-box">
+      <input id="password" type="password" maxlength="4"
+             placeholder="••••" inputmode="numeric">
+      <p class="error" id="error"></p>
+    </div>
+
+    <button class="btn" onclick="unlock()">🔓 Unlock Surprise</button>
+    <p class="footer">Made with love, just for Borsha 🐱</p>
+  </div>
+</section>
+
+<!-- PAGE 2: WELCOME -->
+<section class="page" id="page2">
+  <div class="decor" style="top:10%;left:10%">💗</div>
+  <div class="decor" style="bottom:10%;right:8%">🌷</div>
+  <div class="container">
+    <h1>শুভ জন্মদিন বর্ষা! 🎂</h1>
+    <img class="photo" src=".//WhatsApp Image 2026-10-29 at 7.36.32 PM (1).jpeg" alt="Birthday Girl">
+    <p class="subtitle">
+      আজকের দিনটা অনেক বেশি সুন্দর, কারণ আজ তোমার জন্মদিন!
+      তোমার মুখের হাসি সবসময় এমনই উজ্জ্বল থাকুক।
+    </p>
+    <p>তোমার জন্য অপেক্ষা করছে কিছু ছোট ছোট সারপ্রাইজ! 💕</p>
+    <button class="btn" onclick="go(3)">চলো শুরু করি →</button>
+  </div>
+</section>
+
+<!-- PAGE 3: COUPLE -->
+<section class="page" id="page3">
+  <div class="container">
+    <div class="cat">🐱💕</div>
+    <h2>আমাদের সুন্দর একটি মুহূর্ত</h2>
+    <img class="photo couple" src=".//couple.jpeg" alt="Our special photo">
+    <div class="card">
+      <p>
+        কিছু মুহূর্ত ছবিতে আটকে থাকে, কিন্তু তাদের আনন্দ
+        মনে থেকে যায় অনেক দিন। আমাদের এই ছবিটিও তেমনই
+        একটি সুন্দর স্মৃতি। 💗
+      </p>
+    </div>
+    <button class="btn" onclick="go(4)">পরের পৃষ্ঠা →</button>
+  </div>
+</section>
+
+<!-- PAGE 4: LETTER -->
+<section class="page" id="page4">
+  <div class="container">
+    <h2>বর্ষার জন্য ছোট্ট একটি চিঠি 💌</h2>
+    <img class="photo" src=".//WhatsApp Image 2026-10-29 at 7.36.32 PM (2).jpeg" alt="Borsha">
+    <div class="card letter">
+      <h3 style="color:#d84d91">প্রিয় বর্ষা,</h3>
+      <p>
+        তোমার জন্মদিনে তোমাকে জানাই অনেক অনেক শুভেচ্ছা।
+        জীবনের প্রতিটি দিন যেন তোমার জন্য নতুন আনন্দ
+        আর সুন্দর সম্ভাবনা নিয়ে আসে।
+      </p>
+      <p>
+        তুমি সবসময় নিজের মতো করে হাসিখুশি থেকো।
+        ছোট ছোট আনন্দগুলো উপভোগ করো, নিজের স্বপ্নগুলোকে
+        ভালোবেসো এবং কখনো নিজের ওপর বিশ্বাস হারিয়ো না।
+      </p>
+      <p>
+        তোমার জীবনে যেন কোনো কিছুর অভাব না থাকে।
+        আল্লাহ তোমাকে সুস্থ রাখুন, ভালো রাখুন।
+      </p>
+      <h3 style="color:#d84d91">অনেক আদর ও দোয়া রইল। ❤️</h3>
+    </div>
+    <button class="btn" onclick="go(5)">পরের পৃষ্ঠা →</button>
+  </div>
+</section>
+
+<!-- PAGE 5: LITTLE THINGS -->
+<section class="page" id="page5">
+  <div class="container">
+    <h2>তোমার ছোট ছোট সুন্দর দিকগুলো 🌸</h2>
+    <img class="photo" src=".//WhatsApp Image 2026-10-29 at 7.36.32 PM.jpeg" alt="Borsha">
+    <div class="card">
+      <p>🌷 তোমার হাসিটা যেন সবসময় এমনই থাকে।</p>
+      <p>💗 তোমার প্রতিটি দিন আনন্দে কাটুক।</p>
+      <p>✨ তোমার স্বপ্নগুলো একে একে পূরণ হোক।</p>
+      <p>🧸 তুমি সবসময় সবার আদরের হয়ে থেকো।</p>
+      <p>🌈 জীবনের প্রতিটি নতুন সকাল তোমার জন্য সুন্দর হোক।</p>
+    </div>
+    <button class="btn" onclick="go(6)">পরের পৃষ্ঠা →</button>
+  </div>
+</section>
+
+<!-- PAGE 6: CAT WONDERLAND -->
+<section class="page" id="page6">
+  <div class="container">
+    <h2>Welcome to Cat Wonderland! 🐱</h2>
+    <img class="photo" src=".//WhatsApp Image 2026-10-29 at 7.36.33 PM (1).jpeg" alt="Borsha">
+    <div class="cat">🐱 🎀 🐈</div>
+    <div class="card">
+      <h3>ম্যাঁও ম্যাঁও! 💗</h3>
+      <p>
+        এই ছোট্ট Kitty-র পক্ষ থেকেও তোমাকে জন্মদিনের
+        অনেক অনেক শুভেচ্ছা!
+      </p>
+      <p>
+        আজ কোনো মন খারাপ নয়, কোনো চিন্তা নয়।
+        শুধু হাসি, আনন্দ আর অনেক অনেক মিষ্টি মুহূর্ত!
+      </p>
+    </div>
+    <button class="btn" onclick="go(7)">গেম খেলতে চলো →</button>
+  </div>
+</section>
+
+<!-- PAGE 7: HEART GAME -->
+<section class="page" id="page7">
+  <div class="container">
+    <h2>Heart Catcher Game 💗</h2>
+    <img class="photo" style="width:145px;height:145px;border-radius:50%"
+         src=".//WhatsApp Image 2026-10-29 at 7.36.34 PM.jpeg" alt="Borsha">
+    <p>নিচে পড়ার আগে যতগুলো সম্ভব হার্ট ধরো!</p>
+
+    <div class="game-info">
+      <span>💗 Score: <span id="score">0</span></span>
+      <span>⏰ Time: <span id="time">20</span>s</span>
+    </div>
+
+    <div id="gameArea">
+      <p style="padding:120px 15px" id="gameHint">
+        Start Game চাপো, তারপর হার্টে ট্যাপ করো!
+      </p>
+    </div>
+
+    <button class="btn" id="startGame" onclick="startGame()">🎮 Start Game</button>
+    <p id="gameResult"></p>
+    <button class="btn secondary" onclick="go(8)">পরের পৃষ্ঠা →</button>
+  </div>
+</section>
+
+<!-- PAGE 8: WISHES -->
+<section class="page" id="page8">
+  <div class="container">
+    <h2>শুভ জন্মদিন, বর্ষা! 🎂</h2>
+    <img class="photo" src=".//WhatsApp Image 2026-10-29 at 7.36.34 PM (1).jpeg" alt="Birthday Wishes">
+    <div class="card">
+      <h2>অনেক অনেক দোয়া করি তোমার জন্য! ❤️</h2>
+      <ul class="wish-list">
+        <li>🤲 আল্লাহ তোমাকে সুস্থ ও নিরাপদ রাখুন।</li>
+        <li>🌸 তোমার জীবন আনন্দে ভরে উঠুক।</li>
+        <li>✨ তোমার সব সুন্দর স্বপ্ন পূরণ হোক।</li>
+        <li>💗 সবসময় প্রিয় মানুষদের ভালোবাসায় থেকো।</li>
+        <li>🌈 জীবনে অনেক বড় হও এবং সফল হও।</li>
+      </ul>
+      <p>তোমার জন্য রইল অফুরন্ত ভালোবাসা ও দোয়া।</p>
+    </div>
+    <button class="btn" onclick="go(9)">আরেকটি সারপ্রাইজ →</button>
+  </div>
+</section>
+
+<!-- PAGE 9: MAKE A WISH -->
+<section class="page" id="page9">
+  <div class="container">
+    <h2>Make a Wish! 🌟</h2>
+    <div class="cake" onclick="blowCandle()">🎂</div>
+    <p>চোখ বন্ধ করে একটি সুন্দর ইচ্ছা করো।</p>
+    <p>তারপর কেকের ওপর ট্যাপ করে মোমবাতি নিভিয়ে দাও!</p>
+    <div class="card">
+      <h2 id="candleText">🕯️ 🕯️ 🕯️</h2>
+      <p id="wishText">তোমার সব ইচ্ছা পূরণ হোক! 💗</p>
+    </div>
+    <button class="btn" onclick="go(10)">শেষ সারপ্রাইজ দেখো →</button>
+  </div>
+</section>
+
+<!-- PAGE 10: FINAL -->
+<section class="page" id="page10">
+  <div class="container">
+    <h1>শেষ নয়, সুন্দর স্মৃতি! 💗</h1>
+    <img class="photo" src=".//WhatsApp Image 2026-10-29 at 7.36.33 PM.jpeg" alt="Borsha">
+    <div class="final-message">
+      <div style="font-size:35px">🎀 🌸 🐱</div>
+      <h2>শুভ জন্মদিন বর্ষা!</h2>
+      <p>
+        অনেক অনেক দোয়া করি তোমার জন্য।
+        তোমার জীবনের প্রতিটি দিন সুন্দর হোক।
+        হাসি, আনন্দ ও ভালোবাসায় ভরে উঠুক তোমার পৃথিবী।
+      </p>
+      <p>
+        নিজের যত্ন নিও, সবসময় ভালো থেকো
+        এবং এমনই মিষ্টি হাসি দিয়ে সবাইকে আনন্দ দিও।
+      </p>
+      <h2>অনেক আদর ও ভালোবাসা! ❤️</h2>
+      <p>আবারও শুভ জন্মদিন! 🎂</p>
+    </div>
+    <button class="btn" onclick="restart()">🔄 আবার শুরু থেকে দেখো</button>
+    <p class="footer">A little surprise made with lots of love 💗</p>
+  </div>
+</section>
+
+<script>
+let currentPage = 1;
+
+function go(n) {
+  if (n < 1 || n > 10) return;
+
+  stopGame();
+
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  document.getElementById('page' + n).classList.add('active');
+  currentPage = n;
+
+  document.getElementById('progress').style.width =
+    (n / 10 * 100) + '%';
+
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  if (n === 7) resetGame();
+}
+
+function unlock() {
+  const password = document.getElementById('password').value;
+  const error = document.getElementById('error');
+
+  if (password === '1302') {
+    error.textContent = '';
+    go(2);
+    createConfetti();
+  } else {
+    error.textContent = 'ওহ! পাসওয়ার্ডটি সঠিক হয়নি। আবার চেষ্টা করো! 💗';
+    document.getElementById('password').value = '';
+  }
+}
+
+document.getElementById('password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') unlock();
+});
+
+function restart() {
+  document.getElementById('password').value = '';
+  go(1);
+}
+
+function createConfetti() {
+  const symbols = ['💗','💕','✨','🌸','🎀'];
+  for (let i = 0; i < 22; i++) {
+    const el = document.createElement('div');
+    el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.cssText = `
+      position:fixed;
+      z-index:99;
+      left:${Math.random()*100}vw;
+      top:-40px;
+      font-size:${18+Math.random()*18}px;
+      pointer-events:none;
+      transition:transform 3s linear, opacity 3s;
+    `;
+    document.body.appendChild(el);
+
+    requestAnimationFrame(() => {
+      el.style.transform = `translateY(${innerHeight+100}px) rotate(360deg)`;
+      el.style.opacity = '0';
+    });
+
+    setTimeout(() => el.remove(), 3200);
+  }
+}
+
+// Heart Catcher Game
+let score = 0;
+let seconds = 20;
+let gameInterval = null;
+let heartInterval = null;
+let gameRunning = false;
+
+function resetGame() {
+  stopGame();
+  score = 0;
+  seconds = 20;
+  updateGameInfo();
+  document.getElementById('gameHint').style.display = 'block';
+  document.getElementById('gameHint').textContent =
+    'Start Game চাপো, তারপর হার্টে ট্যাপ করো!';
+  document.getElementById('gameResult').textContent = '';
+  document.getElementById('startGame').disabled = false;
+  document.getElementById('startGame').textContent = '🎮 Start Game';
+}
+
+function updateGameInfo() {
+  document.getElementById('score').textContent = score;
+  document.getElementById('time').textContent = seconds;
+}
+
+function startGame() {
+  if (gameRunning) return;
+
+  score = 0;
+  seconds = 20;
+  gameRunning = true;
+  updateGameInfo();
+
+  const area = document.getElementById('gameArea');
+  area.innerHTML = '';
+
+  document.getElementById('startGame').disabled = true;
+  document.getElementById('startGame').textContent = 'খেলা চলছে...';
+
+  heartInterval = setInterval(() => {
+    if (!gameRunning) return;
+
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = ['💗','💖','💕','💝'][Math.floor(Math.random()*4)];
+    heart.style.left = Math.random() * (area.clientWidth - 40) + 'px';
+    heart.onclick = () => {
+      if (!gameRunning) return;
+      score++;
+      updateGameInfo();
+      heart.remove();
+    };
+
+    area.appendChild(heart);
+    setTimeout(() => heart.remove(), 3500);
+  }, 650);
+
+  gameInterval = setInterval(() => {
+    seconds--;
+    updateGameInfo();
+
+    if (seconds <= 0) finishGame();
+  }, 1000);
+}
+
+function finishGame() {
+  stopGame();
+  document.getElementById('gameResult').textContent =
+    `🎉 দারুণ! তুমি ${score}টি হার্ট ধরেছো! 💗`;
+  document.getElementById('startGame').textContent = '🔄 আবার খেলো';
+  document.getElementById('startGame').disabled = false;
+}
+
+function stopGame() {
+  gameRunning = false;
+  clearInterval(gameInterval);
+  clearInterval(heartInterval);
+  gameInterval = null;
+  heartInterval = null;
+}
+
+function blowCandle() {
+  document.getElementById('candleText').textContent = '🎂 ✨';
+  document.getElementById('wishText').textContent =
+    'ইয়েই! মোমবাতি নিভে গেছে! তোমার সব সুন্দর ইচ্ছা পূরণ হোক! 💗';
+  createConfetti();
+}
+
+// Page navigation using keyboard
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    stopGame();
+  }
+});
+</script>
+
+</body>
+</html>
